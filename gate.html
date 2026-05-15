@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Preview / World NIL Insurance</title>
+<meta name="description" content="Private preview access to World Insurance Associates' NIL & Athletics practice site.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="world-logo.png">
+
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+  }
+
+  /* Mini-nav (no menu — just brand) */
+  .gate-nav {
+    background: var(--navy-deep);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0.85rem var(--s-6);
+  }
+  .gate-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .gate-nav img {
+    height: 28px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+  .gate-nav .divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(255,255,255,0.18);
+  }
+  .gate-nav .sub {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* Main content */
+  .gate-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-10) var(--s-6);
+  }
+
+  .gate-card {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .gate-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: var(--s-4);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .gate-eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .gate-card h1 {
+    font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--fg-strong);
+    margin-bottom: var(--s-5);
+  }
+
+  .gate-card .lead {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--fg-muted);
+    margin-bottom: var(--s-7);
+    max-width: 48ch;
+  }
+
+  /* Form */
+  .gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  .gate-form label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .gate-form input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: var(--sans);
+    font-size: 1rem;
+    color: var(--fg-strong);
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 180ms ease;
+  }
+  .gate-form input:focus {
+    border-color: var(--accent);
+  }
+  .gate-form .input-row {
+    display: flex;
+    gap: var(--s-3);
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .gate-form .input-row input { flex: 1; min-width: 220px; }
+  .gate-form .input-row button {
+    padding: 0.85rem 1.5rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
+    background: var(--navy-deep);
+    border: none;
+    cursor: pointer;
+    transition: background 180ms ease;
+    white-space: nowrap;
+  }
+  .gate-form .input-row button:hover {
+    background: var(--accent);
+    color: var(--navy-deep);
+  }
+  .gate-form .input-row button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .gate-error {
+    font-size: 0.85rem;
+    color: #B91C1C;
+    margin-top: var(--s-2);
+    display: none;
+  }
+  .gate-error.show { display: block; }
+
+  /* Bottom note */
+  .gate-footer-note {
+    margin-top: var(--s-8);
+    padding-top: var(--s-5);
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--fg-dim);
+  }
+  .gate-footer-note a {
+    color: var(--fg);
+    border-bottom: 1px solid var(--accent);
+  }
+  .gate-footer-note a:hover { color: var(--accent-dim); }
+</style>
+</head>
+<body>
+
+<!-- Slim brand bar -->
+<header class="gate-nav">
+  <div class="gate-nav-inner">
+    <img src="world-logo.png" alt="World Insurance Associates">
+    <span class="divider"></span>
+    <span class="sub">NIL &amp; Athletics</span>
+  </div>
+</header>
+
+<!-- Main content -->
+<main class="gate-main">
+  <div class="gate-card">
+    <div class="gate-eyebrow">
+      <span class="dot"></span>
+      <span>Private preview</span>
+    </div>
+
+    <h1>Restricted access &mdash; preview by invitation only.</h1>
+
+    <p class="lead">This site is a working preview of our NIL and incentive insurance practice. It is not yet live publicly and is being shared with select reviewers ahead of its formal release on the World Insurance Associates website.</p>
+
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <label for="pwd">Access code</label>
+      <div class="input-row">
+        <input type="password" id="pwd" name="pwd" required spellcheck="false" autocapitalize="off">
+        <button type="submit" id="submitBtn">Enter site</button>
+      </div>
+      <div class="gate-error" id="gateError">That access code didn&rsquo;t match. Please try again.</div>
+    </form>
+
+    <p class="gate-footer-note">
+      If you received this link in error or need access, contact Zach Brooker at <a href="mailto:zacharybrooker@worldinsurance.com">zacharybrooker@worldinsurance.com</a>.
+    </p>
+  </div>
+</main>
+
+<script>
+  // Casual password gate — JS-only, not a real security boundary.
+  // Anyone with browser dev tools can bypass this in 30 seconds.
+  // Purpose: friction layer for sharing a not-yet-public site preview.
+
+  const CORRECT_PASSWORD = 'Injury';
+  const STORAGE_KEY = 'nil_preview_unlocked';
+
+  const form = document.getElementById('gateForm');
+  const pwdInput = document.getElementById('pwd');
+  const errorBox = document.getElementById('gateError');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // If already unlocked, jump straight to the home page
+  if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+    window.location.replace('index.html');
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const entered = pwdInput.value.trim();
+    if (entered === CORRECT_PASSWORD) {
+      sessionStorage.setItem(STORAGE_KEY, '1');
+      submitBtn.textContent = 'Entering...';
+      submitBtn.disabled = true;
+      setTimeout(() => { window.location.replace('index.html'); }, 250);
+    } else {
+      errorBox.classList.add('show');
+      pwdInput.value = '';
+      pwdInput.focus();
+    }
+  });
+
+  // Clear error as user starts typing again
+  pwdInput.addEventListener('input', function() {
+    errorBox.classList.remove('show');
+  });
+</script>
+
+</body>
+</html>

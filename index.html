@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  // Private preview gate — redirect to gate.html if the visitor hasn't entered the access code.
+  // Casual gate only (not real security). The check uses sessionStorage, so users re-authenticate each browser session.
+  (function() {
+    if (sessionStorage.getItem('nil_preview_unlocked') !== '1') {
+      window.location.replace('gate.html');
+    }
+  })();
+</script>
+
 <title>NIL Insurance for Athletic Departments | World Insurance Associates</title>
 <meta name="description" content="Specialty NIL insurance for college athletic departments, collectives, and booster organizations. Protect revenue-share commitments and performance-based incentives. Underwritten through Lloyd's of London.">
 <meta name="keywords" content="NIL insurance, Name Image Likeness insurance, college athletic insurance, athletic department insurance, NIL collective insurance, Division I athletics insurance, revenue share insurance, Lloyd's of London NIL">
@@ -88,7 +99,7 @@
     <div class="nav-menu">
       <a href="index.html" class="current">Home</a>
       <div class="nav-dropdown">
-        <button>Products</button>
+        <button>Coverage</button>
         <div class="nav-dropdown-menu">
           <a href="nil-insurance.html">
             <div class="item-mono">001</div>
@@ -100,16 +111,8 @@
             <span class="item-title">Contractual Bonus</span>
             <span class="item-desc">Performance-triggered compensation</span>
           </a>
-          <div class="nav-dropdown-divider"></div>
-          <div class="nav-dropdown-section-label mono">For your athletes</div>
-          <a href="athlete-resources.html">
-            <div class="item-mono">Education</div>
-            <span class="item-title">Athlete Resources</span>
-            <span class="item-desc">Curriculum from Goldman Sachs</span>
-          </a>
         </div>
       </div>
-      <a href="use-cases.html">Use Cases</a>
       <a href="why-world.html">Why World</a>
       <a href="team.html">Team</a>
       <a href="contact.html" class="btn btn-accent" style="padding:0.55rem 1rem">Request a quote</a>
@@ -174,8 +177,8 @@
 <section class="section-dark">
   <div class="wrap">
     <div class="section-header">
-      <span class="eyebrow" style="color: var(--accent)">Index / Products</span>
-      <h2>Two insurance products, built around the realities of athletic department finance.</h2>
+      <span class="eyebrow" style="color: var(--accent)">Index / Coverage</span>
+      <h2>Three insurance products, built around the realities of athletic department finance.</h2>
     </div>
 
     <div class="product-index product-index-dark">
@@ -316,12 +319,10 @@
         <p class="footer-brand-desc">Specialty insurance for college athletic departments, collectives, and event programs. Placements made through specialty insurers and Lloyd's of London syndicates.</p>
       </div>
       <div>
-        <h5>Products</h5>
+        <h5>Coverage</h5>
         <ul>
           <li><a href="nil-insurance.html">NIL Insurance</a></li>
           <li><a href="contractual-bonus.html">Contractual Bonus</a></li>
-          <li><a href="use-cases.html">Use Cases</a></li>
-          <li><a href="athlete-resources.html">Athlete Resources</a></li>
         </ul>
       </div>
       <div>
